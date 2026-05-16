@@ -44,6 +44,9 @@ body {
 
 .accordion__header:hover {
   background: #f7f7f7;
+  padding-left: 8px;
+  transform: translateX(4px);
+  transition: transform 0.2s ease;
 }
 
 .accordion__header::-webkit-details-marker {
@@ -70,12 +73,12 @@ body {
   overflow: hidden;
   opacity: 0;
   padding: 0;
-  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, padding 0.3s ease-in-out;
 }
 
 
 .accordion__item[open] .accordion__content {
-  max-height: 300px;
+  max-height: 1000px;
   opacity: 1;
   padding: 0 0 16px;
 }
