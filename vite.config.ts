@@ -1,3 +1,3 @@
 export default {
-  base: "Lia-test",
+  base: "/Lia-test/",
 };
