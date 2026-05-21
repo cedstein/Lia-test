@@ -12,109 +12,69 @@
 
 <body>
   <div id="app"></div>
-  <main class="accordion-wrapper">
+  <main class="accordion">
+    <h1 class="accordion__title">Produktinformation</h1>
 
-    <section class="accordion">
+    <details class="item">
+      <summary> Produktdetaljer</summary>
 
-      <h1 class="accordion__title">Produktinformation</h1>
-
-      <details class="accordion__item">
-        <summary class="accordion__header">
-          Produktdetaljer
-        </summary>
-        <div class="accordion__content">
-          <div class="accordion__content-inner">
-            <p> Lätt och responsiv löparsko för daglig träning.
-
-            </p>
-          </div>
+      <div class="content">
+        <div class="inner">
+          <p>Lätt och responsiv löparsko för daglig träning. </p>
         </div>
-      </details>
+      </div>
+    </details>
 
-      <details class="accordion__item">
-        <summary class="accordion__header">
-          Material
-        </summary>
-        <div class="accordion__content">
-          <div class="accordion__content-inner">
-            <p>
-              Ovandelen är tillverkad i ventilerande mesh som ger bra luftflöde under löpning.
-              Mellansulan är utvecklad för mjuk dämpning och stabil känsla i varje steg.
-            </p>
-          </div>
+    <details class="item">
+      <summary>Material</summary>
+
+      <div class="content">
+        <div class="inner">
+          <p>Ovandelen är tillverkad i ventilerande mesh som ger bra luftflöde under löpning.
+            Mellansulan är utvecklad för mjuk dämpning och stabil känsla i varje steg. </p>
         </div>
-      </details>
+      </div>
+    </details>
 
-      <details class="accordion__item">
-        <summary class="accordion__header">
-          Frakt & Retur
-        </summary>
-        <div class="accordion__content">
-          <div class="accordion__content-inner">
-            <p>
-              Vi erbjuder snabb leverans inom 2–4 arbetsdagar. Returer är möjliga inom 30 dagar
-              om produkten är oanvänd och i originalskick. Retursedel ingår i paketet.
-            </p>
-          </div>
+    <details class="item">
+      <summary> Frakt & Retur</summary>
+
+      <div class="content">
+        <div class="inner">
+          <p>Vi erbjuder snabb leverans inom 2–4 arbetsdagar. Returer är möjliga inom 30 dagar
+            om produkten är oanvänd och i originalskick. Retursedel ingår i paketet. </p>
         </div>
-      </details>
+      </div>
+    </details>
+    <details class="item">
+      <summary>Storleksguide</summary>
 
-      <details class="accordion__item">
-        <summary class="accordion__header">
-          Storleksguide
-        </summary>
-        <div class="accordion__content">
-          <div class="accordion__content-inner">
-            <p>
-              För bästa passform rekommenderar vi att du väljer din vanliga storlek.
-              Skon är designad med en normal passform, men tack vare det flexibla materialet
-              kan den anpassa sig efter fotens form under löpning.
-            </p>
+      <div class="content">
+        <div class="inner">
+          <p>
 
-            <p>
-              Om du ligger mellan två storlekar kan det vara en fördel att välja den större,
-              särskilt vid längre pass där fötterna tenderar att svälla något.
-              Kontrollera gärna vår storlekstabell om du vill vara helt säker innan köp.
-            </p>
-          </div>
+            För bästa passform rekommenderar vi att du väljer din vanliga storlek.
+            Skon är designad med en normal passform, men tack vare det flexibla materialet
+            kan den anpassa sig efter fotens form under löpning.
+
+          </p>
+
+
+
+          <p>
+
+            Om du ligger mellan två storlekar kan det vara en fördel att välja den större,
+            särskilt vid längre pass där fötterna tenderar att svälla något.
+            Kontrollera gärna vår storlekstabell om du vill vara helt säker innan köp.
+
+          </p>
         </div>
-      </details>
+      </div>
+    </details>
 
-    </section>
   </main>
 
-  <script>
-    // Minimal JS fallback to animate block-size to exact content height
-    (function () {
-      const items = document.querySelectorAll('.accordion__item');
-      items.forEach(item => {
-        const details = item;
-        const outer = item.querySelector('.accordion__content');
-        const inner = item.querySelector('.accordion__content-inner');
 
-        // ensure starting closed state
-        outer.style.blockSize = '0px';
-
-        details.addEventListener('toggle', () => {
-          if (details.open) {
-            // set to measured height to animate open
-            const h = inner.scrollHeight;
-            outer.style.blockSize = h + 'px';
-          } else {
-            // animate closed
-            outer.style.blockSize = '0px';
-          }
-        });
-
-        // after transition, clear explicit block-size when open to allow natural flow
-        outer.addEventListener('transitionend', (ev) => {
-          if (ev.propertyName.includes('block-size') && details.open) {
-            outer.style.blockSize = 'auto';
-          }
-        });
-      });
-    })();
-  </script>
 
 </body>
 
